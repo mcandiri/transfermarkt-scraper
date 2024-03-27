@@ -43,7 +43,7 @@ def parse_transfers(content: bytes, year: int) -> List[Tuple[str, str, str]]:
 
 def save_transfers(transfers: List[Tuple[str, str, str]], year: int):
     df = pd.DataFrame(transfers, columns=['Player', 'Left Team', 'Joined Team'])
-    file_name = f'{year}-transfers1.csv'
+    file_name = f'{year}-transfers.csv'
     df.to_csv(file_name, index=False)
     logging.info(f'Saved transfers to {file_name}')
 
